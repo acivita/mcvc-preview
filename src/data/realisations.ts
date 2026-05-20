@@ -1,3 +1,5 @@
+import { assetPath } from "../utils/assetPath";
+
 export type RealisationCategory =
   | "Projet complet"
   | "Climatisation"
@@ -30,7 +32,7 @@ export type Realisation = {
 function createImagePaths(folder: string, count: number) {
   return Array.from({ length: count }, (_, index) => {
     const number = String(index + 1).padStart(2, "0");
-    return `/assets/realisations/${folder}/${number}.jpg`;
+    return assetPath(`assets/realisations/${folder}/${number}.jpg`);
   });
 }
 
