@@ -1,11 +1,21 @@
 import { services } from "../../data/services";
 import "./ServicesSummary.css";
 
-const serviceImages: Record<string, string> = {
-  climatisation: "/assets/home/climatisation.png",
-  plomberie: "/assets/home/plomberie-sanitaire.png",
-  chauffage: "/assets/home/chauffage-pac.png",
-};
+function getServicePagePath(serviceId: string) {
+  if (serviceId === "climatisation") {
+    return `${import.meta.env.BASE_URL}services/climatisation`;
+  }
+
+  if (serviceId === "plomberie") {
+    return `${import.meta.env.BASE_URL}services/plomberie`;
+  }
+
+  if (serviceId === "chauffage") {
+    return `${import.meta.env.BASE_URL}services/chauffage`;
+  }
+
+  return `${import.meta.env.BASE_URL}#services`;
+}
 
 export default function ServicesSummary() {
   return (
@@ -28,9 +38,10 @@ export default function ServicesSummary() {
               >
                 <div className="service-image-wrapper">
                   <img
-                    src={serviceImages[service.id]}
+                    src={service.image}
                     alt={service.title}
                     className="service-image"
+                    loading="lazy"
                   />
 
                   <div className="service-image-overlay">
@@ -51,13 +62,16 @@ export default function ServicesSummary() {
 
                   <div className="service-actions">
                     <a
-                      href={`/services/${service.id}`}
+                      href={getServicePagePath(service.id)}
                       className="service-more-link"
                     >
                       Voir plus
                     </a>
 
-                    <a href="/contact" className="service-contact-link">
+                    <a
+                      href={`${import.meta.env.BASE_URL}contact`}
+                      className="service-contact-link"
+                    >
                       Demander un devis
                     </a>
                   </div>
