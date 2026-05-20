@@ -1,0 +1,230 @@
+.company-intro-section {
+  scroll-margin-top: var(--header-height-desktop);
+  padding: clamp(66px, 8vw, 112px) clamp(20px, 6vw, 92px);
+  background:
+    radial-gradient(circle at top left, rgba(150, 204, 237, 0.2), transparent 32%),
+    linear-gradient(180deg, white, var(--gray));
+}
+
+.company-intro-container {
+  max-width: 1460px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.72fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+
+.company-intro-copy {
+  min-width: 0;
+}
+
+.company-intro-copy h2 {
+  margin: 0;
+  color: var(--blue-dark);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.95;
+  font-weight: 950;
+  letter-spacing: -0.06em;
+}
+
+.company-intro-lead {
+  max-width: 860px;
+  margin: 28px 0 0;
+  color: var(--blue-medium);
+  font-size: clamp(1.15rem, 1.6vw, 1.48rem);
+  line-height: 1.45;
+  font-weight: 850;
+}
+
+.company-intro-text {
+  max-width: 860px;
+  margin-top: 28px;
+  padding-left: 24px;
+  display: grid;
+  gap: 16px;
+  border-left: 4px solid var(--red);
+}
+
+.company-intro-text p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.company-intro-text strong {
+  color: var(--blue-dark);
+  font-weight: 950;
+}
+
+.company-approach {
+  max-width: 860px;
+  margin-top: 34px;
+  padding: 24px 28px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(150, 204, 237, 0.28), transparent 34%),
+    white;
+  border: 1px solid rgba(150, 204, 237, 0.38);
+  box-shadow: 0 18px 42px rgba(7, 28, 99, 0.08);
+}
+
+.company-approach span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.company-approach p {
+  margin: 0;
+  color: var(--blue-dark);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.55;
+  font-weight: 850;
+}
+
+.company-intro-aside {
+  display: grid;
+  gap: 18px;
+}
+
+.company-map-card {
+  height: 330px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--gray-strong);
+  border: 1px solid rgba(150, 204, 237, 0.34);
+  box-shadow: 0 22px 48px rgba(7, 28, 99, 0.13);
+}
+
+.company-map-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.company-location-card {
+  padding: 30px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(150, 204, 237, 0.26), transparent 34%),
+    linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: white;
+  box-shadow: 0 22px 48px rgba(7, 28, 99, 0.15);
+}
+
+.company-location-card h3 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 0.98;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.company-location-card p {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.55;
+  font-weight: 750;
+}
+
+.company-maps-link {
+  width: fit-content;
+  margin-top: 24px;
+  display: inline-flex;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: white;
+  color: var(--blue-dark);
+  text-decoration: none;
+  font-weight: 950;
+}
+
+.company-maps-link:hover {
+  transform: translateY(-2px);
+  background: var(--blue-soft);
+}
+
+@media (max-width: 1120px) {
+  .company-intro-section {
+    scroll-margin-top: var(--header-height-mobile);
+  }
+
+  .company-intro-container {
+    grid-template-columns: 1fr;
+  }
+
+  .company-intro-aside {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .company-map-card {
+    height: auto;
+    min-height: 310px;
+  }
+}
+
+@media (max-width: 760px) {
+  .company-intro-section {
+    padding: 58px 18px;
+  }
+
+  .company-intro-aside {
+    grid-template-columns: 1fr;
+  }
+
+  .company-intro-copy h2 {
+    font-size: clamp(2.25rem, 12vw, 3.45rem);
+  }
+
+  .company-intro-lead {
+    margin-top: 22px;
+    font-size: 1.05rem;
+  }
+
+  .company-intro-text {
+    margin-top: 24px;
+    padding-left: 18px;
+    gap: 14px;
+  }
+
+  .company-intro-text p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .company-approach {
+    margin-top: 26px;
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .company-approach p {
+    font-size: 1rem;
+  }
+
+  .company-map-card {
+    min-height: 250px;
+    border-radius: 22px;
+  }
+
+  .company-location-card {
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .company-location-card h3 {
+    font-size: 2rem;
+  }
+
+  .company-maps-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

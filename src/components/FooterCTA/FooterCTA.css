@@ -1,0 +1,121 @@
+.footer-cta-section {
+  padding: clamp(48px, 6vw, 82px) clamp(20px, 6vw, 92px);
+  background: var(--blue-dark);
+}
+
+.footer-cta-card {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: clamp(32px, 4.5vw, 58px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(150, 204, 237, 0.18), transparent 34%),
+    linear-gradient(135deg, rgba(46, 82, 166, 0.72), rgba(7, 28, 99, 0.52));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.18);
+}
+
+.footer-cta-copy .section-kicker {
+  margin: 0 0 12px;
+  color: var(--blue-light);
+}
+
+.footer-cta-copy h2 {
+  max-width: 760px;
+  margin: 0;
+  color: white;
+  font-size: clamp(2.35rem, 5vw, 5rem);
+  line-height: 0.92;
+  font-weight: 950;
+  letter-spacing: -0.07em;
+}
+
+.footer-cta-copy p:not(.section-kicker) {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.98rem, 1.3vw, 1.12rem);
+  line-height: 1.62;
+  font-weight: 750;
+}
+
+.footer-cta-actions {
+  min-width: 260px;
+  display: grid;
+  gap: 12px;
+}
+
+.footer-cta-primary,
+.footer-cta-secondary {
+  min-height: 52px;
+  padding: 14px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 950;
+  white-space: nowrap;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.footer-cta-primary {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 14px 28px rgba(216, 38, 32, 0.26);
+}
+
+.footer-cta-primary:hover {
+  transform: translateY(-2px);
+  background: var(--red-dark);
+  box-shadow: 0 18px 34px rgba(216, 38, 32, 0.3);
+}
+
+.footer-cta-secondary {
+  background: white;
+  color: var(--blue-dark);
+}
+
+.footer-cta-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--blue-soft);
+}
+
+@media (max-width: 820px) {
+  .footer-cta-section {
+    padding: 42px 18px;
+  }
+
+  .footer-cta-card {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+    border-radius: 26px;
+  }
+
+  .footer-cta-actions {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .footer-cta-primary,
+  .footer-cta-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-cta-copy h2 {
+    font-size: clamp(2.2rem, 12vw, 3.4rem);
+  }
+
+  .footer-cta-copy p:not(.section-kicker) {
+    font-size: 0.95rem;
+  }
+}

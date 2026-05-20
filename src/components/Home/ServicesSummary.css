@@ -1,0 +1,253 @@
+.services-section {
+  padding: clamp(76px, 8vw, 120px) clamp(20px, 6vw, 92px);
+  background:
+    radial-gradient(circle at top left, rgba(150, 204, 237, 0.16), transparent 32%),
+    linear-gradient(180deg, white, var(--gray));
+}
+
+.services-container {
+  max-width: 1460px;
+  margin: 0 auto;
+}
+
+.services-heading {
+  scroll-margin-top: calc(var(--header-height-desktop) + 18px);
+  margin-bottom: clamp(28px, 4vw, 46px);
+  text-align: center;
+}
+
+.services-heading h2 {
+  margin: 0;
+  color: var(--blue-dark);
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  font-weight: 950;
+  letter-spacing: -0.06em;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  scroll-margin-top: calc(var(--header-height-desktop) + 18px);
+  overflow: hidden;
+  border-radius: 30px;
+  background: white;
+  border: 1px solid rgba(150, 204, 237, 0.34);
+  box-shadow: 0 20px 44px rgba(7, 28, 99, 0.1);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(150, 204, 237, 0.7);
+  box-shadow: 0 28px 54px rgba(7, 28, 99, 0.14);
+}
+
+.service-image-wrapper {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.04);
+}
+
+.service-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 28, 99, 0.04) 0%,
+    rgba(7, 28, 99, 0.72) 100%
+  );
+}
+
+.service-image-overlay h3 {
+  margin: 0;
+  color: white;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.service-card-content {
+  padding: 24px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.service-description {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+.service-list {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--blue-dark);
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  transform: translateY(-50%);
+}
+
+.service-actions {
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.service-more-link,
+.service-contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 950;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.service-more-link {
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.service-more-link:hover {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+.service-contact-link {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 12px 24px rgba(216, 38, 32, 0.18);
+}
+
+.service-contact-link:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1120px) {
+  .services-heading,
+  .service-card {
+    scroll-margin-top: calc(var(--header-height-mobile) + 18px);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-image-wrapper {
+    height: 260px;
+  }
+
+  .service-card-content {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .services-section {
+    padding: 58px 18px;
+  }
+
+  .services-heading h2 {
+    font-size: clamp(2.25rem, 12vw, 3.45rem);
+  }
+
+  .services-grid {
+    gap: 18px;
+  }
+
+  .service-card {
+    border-radius: 24px;
+  }
+
+  .service-image-wrapper {
+    height: 210px;
+  }
+
+  .service-image-overlay {
+    padding: 18px;
+  }
+
+  .service-image-overlay h3 {
+    font-size: 1.75rem;
+  }
+
+  .service-card-content {
+    padding: 20px;
+  }
+
+  .service-description {
+    font-size: 0.96rem;
+    line-height: 1.58;
+  }
+
+  .service-list {
+    gap: 9px;
+  }
+
+  .service-list li {
+    font-size: 0.95rem;
+  }
+
+  .service-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-more-link,
+  .service-contact-link {
+    width: 100%;
+  }
+}

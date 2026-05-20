@@ -1,0 +1,346 @@
+.floating-contact-widget {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  z-index: 1200;
+}
+
+.contact-launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 1px solid rgba(150, 204, 237, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--blue-dark);
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow:
+    0 16px 34px rgba(7, 28, 99, 0.2),
+    0 6px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.contact-launcher:hover {
+  transform: translateY(-2px);
+  background: white;
+  color: var(--red);
+}
+
+.launcher-icon {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--red);
+  color: transparent;
+  box-shadow: 0 0 0 5px rgba(216, 38, 32, 0.12);
+}
+
+.contact-dialog {
+  width: min(460px, calc(100vw - 34px));
+  margin-bottom: 14px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 26px 70px rgba(7, 28, 99, 0.28);
+  border: 1px solid rgba(150, 204, 237, 0.34);
+}
+
+.contact-dialog-header {
+  min-height: 82px;
+  padding: 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: white;
+  background:
+    radial-gradient(circle at top right, rgba(150, 204, 237, 0.28), transparent 34%),
+    linear-gradient(135deg, var(--blue), var(--blue-dark));
+}
+
+.contact-dialog-header strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 950;
+}
+
+.contact-dialog-header span {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.contact-dialog-header button {
+  align-self: flex-start;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.contact-progress {
+  height: 5px;
+  background: var(--blue-soft);
+}
+
+.contact-progress span {
+  height: 100%;
+  display: block;
+  background: var(--red);
+  transition: width 0.22s ease;
+}
+
+.contact-dialog-body {
+  max-height: min(62vh, 560px);
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.contact-step h3 {
+  margin: 0 0 18px;
+  color: var(--blue-dark);
+  font-size: 1.45rem;
+  line-height: 1.05;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.option-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.option-grid button {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid rgba(150, 204, 237, 0.42);
+  border-radius: 16px;
+  background: white;
+  color: var(--blue-dark);
+  text-align: left;
+  font-weight: 850;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.option-grid button:hover {
+  transform: translateY(-1px);
+  background: var(--blue-soft);
+}
+
+.option-grid button.is-selected {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  color: white;
+}
+
+.field-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.field-grid label,
+.contact-step label {
+  display: grid;
+  gap: 8px;
+  color: var(--blue-dark);
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.field-grid input,
+.contact-step textarea {
+  width: 100%;
+  border: 1px solid rgba(150, 204, 237, 0.48);
+  border-radius: 16px;
+  padding: 13px 14px;
+  color: var(--blue-dark);
+  background: white;
+  outline: none;
+  font-weight: 750;
+}
+
+.field-grid input:focus,
+.contact-step textarea:focus {
+  border-color: var(--blue-medium);
+  box-shadow: 0 0 0 3px rgba(150, 204, 237, 0.22);
+}
+
+.contact-step textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-summary {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 20px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.contact-summary p {
+  margin: 0;
+  line-height: 1.45;
+  color: var(--text-muted);
+  font-weight: 750;
+}
+
+.contact-summary strong {
+  color: var(--blue-dark);
+  font-weight: 950;
+}
+
+.final-actions {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.send-request-button,
+.call-button {
+  min-height: 48px;
+  padding: 13px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 950;
+}
+
+.send-request-button {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 12px 24px rgba(216, 38, 32, 0.2);
+}
+
+.send-request-button:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+}
+
+.call-button {
+  background: white;
+  color: var(--blue-dark);
+  border: 1px solid rgba(150, 204, 237, 0.48);
+}
+
+.call-button:hover {
+  background: var(--blue-soft);
+  transform: translateY(-2px);
+}
+
+.contact-dialog-footer {
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid rgba(150, 204, 237, 0.28);
+  background: white;
+}
+
+.contact-dialog-footer > div {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-action,
+.secondary-action {
+  min-height: 42px;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.primary-action {
+  background: var(--red);
+  color: white;
+}
+
+.primary-action:hover {
+  background: var(--red-dark);
+}
+
+.primary-action:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.secondary-action {
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.secondary-action:hover {
+  background: rgba(150, 204, 237, 0.45);
+}
+
+@media (max-width: 620px) {
+  .floating-contact-widget {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .contact-launcher {
+    padding: 12px 16px;
+    font-size: 0.88rem;
+  }
+
+  .contact-dialog {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 100px);
+    margin-bottom: 10px;
+    border-radius: 22px;
+  }
+
+  .contact-dialog-header {
+    min-height: 74px;
+    padding: 17px 18px;
+  }
+
+  .contact-dialog-body {
+    max-height: calc(100vh - 250px);
+    padding: 18px;
+  }
+
+  .contact-step h3 {
+    font-size: 1.28rem;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-dialog-footer {
+    padding: 14px;
+    flex-direction: column;
+  }
+
+  .contact-dialog-footer > div {
+    justify-content: flex-end;
+  }
+
+  .primary-action,
+  .secondary-action {
+    min-height: 40px;
+    padding: 10px 14px;
+  }
+}
