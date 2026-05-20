@@ -1,3 +1,5 @@
+import { assetPath } from "../utils/assetPath";
+
 export type ServiceItem = {
   title: string;
   text: string;
@@ -7,6 +9,7 @@ export type ServiceCategory = {
   id: string;
   title: string;
   menuLabel: string;
+  image: string;
   shortDescription: string;
   items: ServiceItem[];
 };
@@ -16,6 +19,7 @@ export const services: ServiceCategory[] = [
     id: "climatisation",
     title: "Climatisation",
     menuLabel: "Climatisation",
+    image: assetPath("assets/home/climatisation.png"),
     shortDescription:
       "Installation, entretien et dépannage de systèmes de climatisation performants et durables.",
     items: [
@@ -41,6 +45,7 @@ export const services: ServiceCategory[] = [
     id: "plomberie",
     title: "Plomberie & sanitaire",
     menuLabel: "Plomberie / Sanitaire",
+    image: assetPath("assets/home/plomberie-sanitaire.png"),
     shortDescription:
       "Travaux de plomberie en neuf, rénovation, dépannage et installations sanitaires haut de gamme.",
     items: [
@@ -70,6 +75,7 @@ export const services: ServiceCategory[] = [
     id: "chauffage",
     title: "Chauffage",
     menuLabel: "Chauffage",
+    image: assetPath("assets/home/chauffage-pac.png"),
     shortDescription:
       "Solutions de chauffage modernes : pompes à chaleur, planchers chauffants et radiateurs.",
     items: [
